@@ -30,7 +30,15 @@
 
     <div class="container flex animate-up delay-2">
       <main>
-        <form id="form-job">
+
+        <!-- Precisamos de um action e method para trafegar dados -->
+        <!-- o id=""  será linkado as propriedades de submit de todo o form -->
+        <form 
+          id="form-job" 
+          action="/job" 
+          method="post">
+
+
           <fieldset>
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
@@ -64,7 +72,10 @@
           ver o valor do projeto
         </p>
         <div class="button-group">
+
+          <!-- a propriedade form="" usa um valor linkado ao respectivo formulário onde ocorrerá o submit  -->
           <button class="button green" form="form-job" type="submit" title="Salvar Dados">Salvar</button>
+
           <a href="/" class="button gray">
             <img src="/images/trash-24.svg" alt="Cancelar cadastro" title="Cancelar cadastro">
           </a>
