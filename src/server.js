@@ -1,9 +1,13 @@
 const express = require('express')
 const server = express()
 const routes = require('./routes')
+const path = require('path')
 
 // set EJS como template engine
 server.set('view engine', 'ejs')
+
+// Mudan a localização da posta views
+server.set('views', path.join(__dirname, 'views'))
 
 // middleware que habilita arquivos estáticos
 server.use(express.static("public"))
