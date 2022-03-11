@@ -15,13 +15,15 @@ module.exports = {
 
 
         // insere dados no array
-        jobs.push({
-            id: lastId + 1,
-            name: req.body.name,
-            "daily-hours": req.body["daily-hours"],
-            "total-hours": req.body["total-hours"],
-            created_at: Date.now() // atribuindo nova data
-        })
+        Job.create({
+          id: lastId + 1,
+          name: req.body.name,
+          "daily-hours": req.body["daily-hours"],
+          "total-hours": req.body["total-hours"],
+          created_at: Date.now() // atribuindo nova data
+      });
+
+        
 
         // redirecionar para page index
         return res.redirect('/')
