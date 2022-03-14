@@ -4,12 +4,12 @@ const Profile = require('../model/Profile')
 
 module.exports = {
 
-  index(req, res) {
+  async index(req, res) {
 
 
     // 'map' retorna um array de Objs
-    const jobs = Job.get();
-    const profile = Profile.get();
+    const jobs = await Job.get();
+    const profile = await Profile.get();
 
     // contar status
     let statusCount = {
